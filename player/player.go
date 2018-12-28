@@ -12,10 +12,15 @@ type Player struct {
 	otherPlayersChannels []chan int
 }
 
+var CHANELS_LIST_NOT_GOOD_ERR = "Channels list has no channels in it"
+
 //New - Player constructor
-func New(username string, number int, userChannel chan int, channelsList []chan int) Player {
+func New(username string, number int, userChannel chan int, channelsList []chan int) (Player, error) {
+	if channelsList == nil {
+		return Player{}, fmt.Errorf("%s", CHANELS_LIST_NOT_GOOD_ERR)
+	}
 	e := Player{username, number, userChannel, channelsList}
-	return e
+	return e, nil
 }
 
 //-----------Public functions-----------
@@ -38,6 +43,11 @@ func (e Player) GetRandomNumber() int {
 //GetChannel - return the channel of the user
 func (e Player) GetChannel() chan int {
 	return e.ch
+}
+
+//GetotherPlayersChannels - return other players channels
+func (e Player) GetotherPlayersChannels() []chan int {
+	return e.otherPlayersChannels
 }
 
 //SendMessagesToAllPlayers - Sends the random number of the user to all the others players channels

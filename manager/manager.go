@@ -46,7 +46,7 @@ func (m Manager) StartGame(numOfPlayers int) {
 	}
 	//Create players
 	for i := 0; i < numOfPlayers; i++ {
-		e := p.New(fmt.Sprintf("%s%d", "player", i), randomNumber(), instance.channels[i], getChannelsListWithoutIndex(i))
+		e, _ := p.New(fmt.Sprintf("%s%d", "player", i), randomNumber(), instance.channels[i], getChannelsListWithoutIndex(i))
 		addPlayer(e)
 	}
 	m.printToConsole("The players in the currnt game:\n" + m.getPlayersList())
