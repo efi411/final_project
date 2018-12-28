@@ -1,7 +1,7 @@
 package main
 
 import (
-	m "GoChannels/manager"
+	m "final_project/manager"
 )
 
 func main() {
