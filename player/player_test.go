@@ -15,7 +15,7 @@ var (
 	channels           []chan int
 )
 
-func TestBooks(t *testing.T) {
+func TestPlayers(t *testing.T) {
 	channelPlayer, channels = createPlayersChannels()
 
 	RegisterFailHandler(Fail)
