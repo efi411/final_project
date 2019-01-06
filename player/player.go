@@ -71,6 +71,5 @@ func (e Player) GetSum(numOfPlayers int) string {
 
 //sendNumber - Sends the random number of the user to the channel (argument)
 func (e Player) sendNumber(channel chan int) {
-	//e.number is always the same!!!
 	channel <- e.number
 }
