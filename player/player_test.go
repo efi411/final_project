@@ -1,7 +1,7 @@
 package player_test
 
 import (
-	p "final_project/player"
+	p "final_project1/player"
 	"testing"
 
 	. "github.com/onsi/ginkgo"
